@@ -16,7 +16,7 @@ public interface ITestData {
         };
     }
 
-    default String Random() {
+    default String getRandomChar() {
         Random random = new Random();
         char nextChar;
         StringBuilder stringBuilder = new StringBuilder();

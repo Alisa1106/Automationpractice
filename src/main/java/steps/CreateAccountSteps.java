@@ -15,10 +15,10 @@ public class CreateAccountSteps {
         authenticationPage = new AuthenticationPage(driver);
     }
 
-    public CreateAccountSteps create(String email, Account account) {
+    public CreateAccountSteps createAccount(String email, Account account) {
         authenticationPage
                 .openPage()
-                .startCreateAccount(email);
+                .clickCreateAccountButton(email);
         createAccountPage
                 .createAccount(account);
         return this;

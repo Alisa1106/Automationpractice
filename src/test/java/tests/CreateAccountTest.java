@@ -12,7 +12,7 @@ public class CreateAccountTest extends BaseTest implements ITestData {
         Account account = new Account("Hanna", "Smith", "123456", "75 PARK PLACE 8TH FLOOR",
                 "NY", "New York", "12345", "United States", "12345678912", "New customer address");
         createAccountSteps
-                .create(Random() + "@mailinator.com", account);
+                .createAccount(getRandomChar() + "@mailinator.com", account);
         Assert.assertEquals(myAccountSteps.getMyAccountName(), account.getFirstName() + " " + account.getLastName());
     }
 }

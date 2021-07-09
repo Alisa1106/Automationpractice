@@ -12,6 +12,6 @@ public class MyAccountSteps {
     }
 
     public String getMyAccountName() {
-    return myAccountPage.getCustomerNameText();
+        return myAccountPage.getCustomerNameText();
     }
 }

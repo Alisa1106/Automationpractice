@@ -46,7 +46,7 @@ public class AuthenticationPage extends HeaderPage {
         return errorMessageContainer.getText();
     }
 
-    public CreateAccountPage startCreateAccount(String email) {
+    public CreateAccountPage clickCreateAccountButton(String email) {
         waitForElementLocated(createAccountEmailInput, 20);
         createAccountEmailInput.sendKeys(email);
         createAccountButton.click();

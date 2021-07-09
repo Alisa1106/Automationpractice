@@ -27,10 +27,10 @@ public class CreateAccountPage extends HeaderPage {
         new Input(driver, "Address").writeText(account.getAddress());
         new Input(driver, "City").writeText(account.getCity());
         new DropDown(driver, "State").select(account.getState());
-        new Input(driver, "Zip/Postal Code").writeText(account.getZip_code());
+        new Input(driver, "Zip/Postal Code").writeText(account.getZipCode());
         new DropDown(driver, "Country").select(account.getCountry());
-        new Input(driver, "Mobile phone").writeText(account.getMobile_phone());
-        new Input(driver, "Assign an address alias for future reference.").writeText(account.getAddress_alias());
+        new Input(driver, "Mobile phone").writeText(account.getMobilePhone());
+        new Input(driver, "Assign an address alias for future reference.").writeText(account.getAddressAlias());
         registerButton.click();
         return new MyAccountPage(driver);
     }
