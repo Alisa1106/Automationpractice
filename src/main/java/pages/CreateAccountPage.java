@@ -23,7 +23,7 @@ public class CreateAccountPage extends HeaderPage {
         waitForElementLocated(accountCreationTable, 10);
         new Input(driver, "First name").writeText(account.getFirstName());
         new Input(driver, "Last name").writeText(account.getLastName());
-        new Input(driver, "Password ").writeText(account.getPassword());
+        new Input(driver, "Password").writeText(account.getPassword());
         new Input(driver, "Address").writeText(account.getAddress());
         new Input(driver, "City").writeText(account.getCity());
         new DropDown(driver, "State").select(account.getState());
