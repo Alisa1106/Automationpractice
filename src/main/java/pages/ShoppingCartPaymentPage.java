@@ -14,7 +14,7 @@ public class ShoppingCartPaymentPage extends HeaderPage {
     public static final String PRODUCT_ITEM_XPATH = "//*[text()='%s']/ancestor::*[contains(@class,'cart_item')]";
     public static final String PRODUCT_COLOR_AND_SIZE_XPATH = "//*[text()='%s']/ancestor::*[@class='cart_description']//small//a";
     public static final String UNIT_PRODUCT_PRICE_XPATH = PRODUCT_ITEM_XPATH + "//*[@class='price']//*";
-    public static final String PRODUCT_QUANTITY_XPATH = PRODUCT_ITEM_XPATH + "//*[@class='cart_quantity text-center']//*";
+    public static final String PRODUCT_QUANTITY_XPATH = PRODUCT_ITEM_XPATH + "//*[contains(@class,'cart_quantity')]//*";
 
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;

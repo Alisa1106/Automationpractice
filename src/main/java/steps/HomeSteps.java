@@ -11,8 +11,8 @@ public class HomeSteps {
         homePage = new HomePage(driver);
     }
 
-    public HomeSteps addProductToCartWithChoiceProductQuantityAndSizeAndColorThenGoToCart(String productName, String productQuantity,
-                                                                                          String size, String color) {
+    public HomeSteps addProductToCartWithConditionsThenGoToCart(String productName, String productQuantity,
+                                                                String size, String color) {
         homePage
                 .openPage()
                 .clickMoreButton(productName)

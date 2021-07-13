@@ -15,13 +15,12 @@ public class ShoppingCartTest extends BaseTest implements ITestConstants {
                 .signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),
                         System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
         homeSteps
-                .addProductToCartWithChoiceProductQuantityAndSizeAndColorThenGoToCart(product.getProductName(),
-                        product.getProductQuantity(), product.getSize(), product.getColor());
+                .addProductToCartWithConditionsThenGoToCart(product.getName(), product.getQuantity(), product.getSize(), product.getColor());
         shoppingCartSummarySteps
                 .goToPayment();
-        Assert.assertEquals(shoppingCartPaymentSteps.getProductColorAndSize(product.getProductName()), "Color : "
+        Assert.assertEquals(shoppingCartPaymentSteps.getProductColorAndSize(product.getName()), "Color : "
                 + product.getColor() + ", Size : " + product.getSize());
-        Assert.assertEquals(shoppingCartPaymentSteps.getProductQuantity(product.getProductName()), product.getProductQuantity());
-        Assert.assertEquals(shoppingCartPaymentSteps.getUnitProductPrice(product.getProductName()), product.getPrice());
+        Assert.assertEquals(shoppingCartPaymentSteps.getProductQuantity(product.getName()), product.getQuantity());
+        Assert.assertEquals(shoppingCartPaymentSteps.getUnitProductPrice(product.getName()), product.getPrice());
     }
 }

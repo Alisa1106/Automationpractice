@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Product {
-    String productName;
-    String productQuantity;
-    String size;
-    String color;
-    String price;
+    private String name;
+    private String quantity;
+    private String size;
+    private String color;
+    private String price;
 }
