@@ -33,6 +33,13 @@ public class ShoppingCartPaymentSteps {
         return this;
     }
 
+    public ShoppingCartPaymentSteps goToPayByCheck() {
+        shoppingCartPaymentPage
+                .waitForPageOpened()
+                .clickPayByCheckButton();
+        return this;
+    }
+
     public String getTotalPrice() {
         return shoppingCartPaymentPage
                 .waitForPageOpened()

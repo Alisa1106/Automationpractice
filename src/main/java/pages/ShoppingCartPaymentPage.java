@@ -1,5 +1,6 @@
 package pages;
 
+import elements.Button;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +19,6 @@ public class ShoppingCartPaymentPage extends HeaderPage {
 
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;
-
-    @FindBy(className = "bankwire")
-    WebElement payByBankWireButton;
 
     @FindBy(id = "total_price")
     WebElement totalPrice;
@@ -43,8 +41,13 @@ public class ShoppingCartPaymentPage extends HeaderPage {
     }
 
     public BankWirePaymentPage clickPayByBankWireButton() {
-        payByBankWireButton.click();
+        new Button(driver, "Pay by bank wire").click();
         return new BankWirePaymentPage(driver);
+    }
+
+    public CheckPaymentPage clickPayByCheckButton() {
+        new Button(driver, "Pay by check").click();
+        return new CheckPaymentPage(driver);
     }
 
     public String getTotalPrice() {

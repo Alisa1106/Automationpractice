@@ -1,5 +1,6 @@
 package pages;
 
+import elements.Button;
 import elements.Checkbox;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,9 +15,6 @@ public class ShoppingCartShippingPage extends BasePage {
     @FindBy(xpath = "//*[@id='form']")
     WebElement pageForm;
 
-    @FindBy(xpath = "//*[contains(@class,'standard-checkout')]//*[contains(text(),'Proceed to checkout')]")
-    WebElement proceedToCheckoutButton;
-
     public ShoppingCartShippingPage waitForPageOpened() {
         waitForElementLocated(pageForm, 10);
         return this;
@@ -28,7 +26,7 @@ public class ShoppingCartShippingPage extends BasePage {
     }
 
     public ShoppingCartPaymentPage clickProceedToCheckoutButton() {
-        proceedToCheckoutButton.click();
+        new Button(driver, "Proceed to checkout").click();
         return new ShoppingCartPaymentPage(driver);
     }
 }

@@ -10,8 +10,9 @@ public class SignInTest extends BaseTest implements ITestConstants {
 
     @Test
     public void signInWithValidCredentialsTest() {
-        authenticationSteps.signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),
-                System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
+        authenticationSteps
+                .signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),
+                        System.getenv().getOrDefault("password", PropertyReader.getProperty("password")));
         Assert.assertEquals(myAccountSteps.getMyAccountName(), MY_ACCOUNT_NAME);
     }
 
