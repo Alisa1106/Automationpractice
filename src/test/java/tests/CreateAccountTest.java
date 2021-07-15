@@ -4,7 +4,7 @@ import constants.ITestConstants;
 import objects.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testData.ITestData;
+import test_data.ITestData;
 
 public class CreateAccountTest extends BaseTest implements ITestData, ITestConstants {
 

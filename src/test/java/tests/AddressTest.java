@@ -4,7 +4,7 @@ import constants.ITestConstants;
 import objects.Address;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testData.ITestData;
+import test_data.ITestData;
 import utils.PropertyReader;
 
 public class AddressTest extends BaseTest implements ITestData, ITestConstants {

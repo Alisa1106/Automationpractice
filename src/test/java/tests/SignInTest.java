@@ -3,7 +3,7 @@ package tests;
 import constants.ITestConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testData.ITestData;
+import test_data.ITestData;
 import utils.PropertyReader;
 
 public class SignInTest extends BaseTest implements ITestConstants {
