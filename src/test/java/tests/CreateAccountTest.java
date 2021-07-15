@@ -1,18 +1,19 @@
 package tests;
 
+import constants.ITestConstants;
 import objects.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testData.ITestData;
+import test_data.ITestData;
 
-public class CreateAccountTest extends BaseTest implements ITestData {
+public class CreateAccountTest extends BaseTest implements ITestData, ITestConstants {
 
     @Test
     public void createAccountTest() {
-        Account account = new Account("Hanna", "Smith", "123456", "75 PARK PLACE 8TH FLOOR",
-                "NY", "New York", "12345", "United States", "12345678912", "New customer address");
+        Account account = new Account(FIRST_NAME, LAST_NAME, CREATE_ACCOUNT_PASSWORD, ADDRESS, CITY, STATE, ZIP_CODE,
+                COUNTRY, MOBILE_PHONE);
         createAccountSteps
-                .createAccount(getRandomChar() + "@mailinator.com", account);
+                .createAccount(getRandomChar() + EMAIL_DOMAIN_NAME, account);
         Assert.assertEquals(myAccountSteps.getMyAccountName(), account.getFirstName() + " " + account.getLastName());
     }
 }

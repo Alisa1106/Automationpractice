@@ -15,7 +15,12 @@ public class BaseTest {
     HomeSteps homeSteps;
     ShoppingCartSummarySteps shoppingCartSummarySteps;
     ShoppingCartPaymentSteps shoppingCartPaymentSteps;
+    ShoppingCartAddressSteps shoppingCartAddressSteps;
     BankWirePaymentSteps bankWirePaymentSteps;
+    CheckPaymentSteps checkPaymentSteps;
+    OrderConfirmationSteps orderConfirmationSteps;
+    MyAddressesSteps myAddressesSteps;
+    OrderHistorySteps orderHistorySteps;
 
     @BeforeMethod
     public void initTest() {
@@ -37,6 +42,11 @@ public class BaseTest {
         homeSteps = new HomeSteps(driver);
         shoppingCartSummarySteps = new ShoppingCartSummarySteps(driver);
         shoppingCartPaymentSteps = new ShoppingCartPaymentSteps(driver);
+        shoppingCartAddressSteps = new ShoppingCartAddressSteps(driver);
         bankWirePaymentSteps = new BankWirePaymentSteps(driver);
+        checkPaymentSteps = new CheckPaymentSteps(driver);
+        orderConfirmationSteps = new OrderConfirmationSteps(driver);
+        myAddressesSteps = new MyAddressesSteps(driver);
+        orderHistorySteps = new OrderHistorySteps(driver);
     }
 }

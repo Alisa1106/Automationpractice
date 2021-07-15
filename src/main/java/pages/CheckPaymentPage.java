@@ -5,22 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ShoppingCartSummaryPage extends HeaderPage {
+public class CheckPaymentPage extends HeaderPage {
 
-    public ShoppingCartSummaryPage(WebDriver driver) {
+    public CheckPaymentPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;
 
-    public ShoppingCartSummaryPage waitForPageOpened() {
+    public CheckPaymentPage waitForPageOpened() {
         waitForElementLocated(centerColumn, 10);
         return this;
     }
 
-    public ShoppingCartAddressPage clickProceedToCheckoutButton() {
-        new Button(driver, "Proceed to checkout").click();
-        return new ShoppingCartAddressPage(driver);
+    public OrderConfirmationByCheckPage clickConfirmOrderButton() {
+        new Button(driver, "I confirm my order").click();
+        return new OrderConfirmationByCheckPage(driver);
     }
 }

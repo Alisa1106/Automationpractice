@@ -30,7 +30,6 @@ public class CreateAccountPage extends HeaderPage {
         new Input(driver, "Zip/Postal Code").writeText(account.getZipCode());
         new DropDown(driver, "Country").select(account.getCountry());
         new Input(driver, "Mobile phone").writeText(account.getMobilePhone());
-        new Input(driver, "Assign an address alias for future reference.").writeText(account.getAddressAlias());
         registerButton.click();
         return new MyAccountPage(driver);
     }

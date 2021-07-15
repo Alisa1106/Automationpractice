@@ -17,4 +17,8 @@ public class Input {
     public void writeText(String text) {
         driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).sendKeys(text);
     }
+
+    public void clear() {
+        driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).clear();
+    }
 }
