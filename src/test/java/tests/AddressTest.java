@@ -9,7 +9,7 @@ import utils.PropertyReader;
 
 public class AddressTest extends BaseTest implements ITestData, ITestConstants {
 
-    @Test(dataProvider = "Update address", dataProviderClass = ITestData.class)
+    @Test(description = "Check that address can be updated", dataProvider = "Update address", dataProviderClass = ITestData.class)
     public void checkAddressUpdatedTest(String address, String city, String state, String zipCode, String country,
                                         String mobilePhone, String addressAlias) {
         Address changingAddress = new Address(address, city, state, zipCode, country, mobilePhone, addressAlias);
@@ -22,7 +22,7 @@ public class AddressTest extends BaseTest implements ITestData, ITestConstants {
         Assert.assertEquals(myAddressesSteps.getMobilePhone(changingAddress.getAddressAlias()), changingAddress.getMobilePhone());
     }
 
-    @Test
+    @Test(description = "Check that created address can be selected as delivery address")
     public void checkNewAddressCanBeSelectedAsDeliveryAddressTest() {
         Address newAddress = new Address(ADDRESS, CITY, STATE, ZIP_CODE, COUNTRY, MOBILE_PHONE, getRandomChar());
         authenticationSteps

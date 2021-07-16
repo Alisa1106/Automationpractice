@@ -7,7 +7,7 @@ import utils.PropertyReader;
 
 public class PaymentTest extends BaseTest implements ITestConstants {
 
-    @Test
+    @Test(description = "Check total amount of order at Bank wire payment page by bank wire pay")
     public void checkTotalAmountOfOrderByBankWirePayTest() {
         authenticationSteps
                 .signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),

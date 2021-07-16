@@ -8,7 +8,7 @@ import utils.PropertyReader;
 
 public class SignInTest extends BaseTest implements ITestConstants {
 
-    @Test
+    @Test(description = "Check possibility of sign in site with valid credentials")
     public void signInWithValidCredentialsTest() {
         authenticationSteps
                 .signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),
@@ -16,7 +16,8 @@ public class SignInTest extends BaseTest implements ITestConstants {
         Assert.assertEquals(myAccountSteps.getMyAccountName(), MY_ACCOUNT_NAME);
     }
 
-    @Test(dataProvider = "Invalid sign in credentials", dataProviderClass = ITestData.class)
+    @Test(description = "Check that when sign in site with invalid credentials error message is displayed",
+            dataProvider = "Invalid sign in credentials", dataProviderClass = ITestData.class)
     public void signInWithInvalidCredentialsTest(String email, String password, String error) {
         Assert.assertEquals(authenticationSteps.invalidSignIn(email, password), error);
     }

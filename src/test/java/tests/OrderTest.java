@@ -7,7 +7,7 @@ import utils.PropertyReader;
 
 public class OrderTest extends BaseTest implements ITestConstants {
 
-    @Test
+    @Test(description = "Check that when order made its reference displayed at My order page")
     public void checkOrderReferenceAtMyOrderPage() {
         authenticationSteps
                 .signIn(System.getenv().getOrDefault("email", PropertyReader.getProperty("email")),
