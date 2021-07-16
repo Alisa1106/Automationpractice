@@ -17,17 +17,17 @@ public class ProductAddedToCartModal extends BasePage {
     WebElement buttonContainer;
 
     @FindBy(xpath = "//*[@class='cross']")
-    WebElement closeModalCross;
+    WebElement closeModalCrossButton;
 
     public ShoppingCartSummaryPage clickProceedToCheckoutButton() {
-        waitForElementLocated(buttonContainer, 10);
+        waitForElementLocated(buttonContainer, SHORT_TIMEOUT);
         proceedToCheckoutButton.click();
         return new ShoppingCartSummaryPage(driver);
     }
 
-    public HeaderPage clickCloseModalCross() {
-        waitForElementLocated(closeModalCross, 10);
-        closeModalCross.click();
+    public HeaderPage clickCloseModalCrossButton() {
+        waitForElementLocated(closeModalCrossButton, SHORT_TIMEOUT);
+        closeModalCrossButton.click();
         return new HeaderPage(driver);
     }
 }

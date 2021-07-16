@@ -20,7 +20,7 @@ public class CreateAccountPage extends HeaderPage {
     WebElement accountCreationTable;
 
     public MyAccountPage createAccount(Account account) {
-        waitForElementLocated(accountCreationTable, 10);
+        waitForElementLocated(accountCreationTable, SHORT_TIMEOUT);
         new Input(driver, "First name").writeText(account.getFirstName());
         new Input(driver, "Last name").writeText(account.getLastName());
         new Input(driver, "Password").writeText(account.getPassword());

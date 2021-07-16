@@ -20,7 +20,7 @@ public class CartDropdown extends HeaderPage {
     WebElement cartDropdownContent;
 
     public CartDropdown waitForPageOpened() {
-        waitForElementLocated(cartDropdownContent, 10);
+        waitForElementLocated(cartDropdownContent, SHORT_TIMEOUT);
         return this;
     }
 
@@ -36,12 +36,12 @@ public class CartDropdown extends HeaderPage {
         return driver.findElement(By.xpath(String.format(PRODUCT_PRICE_XPATH, productName))).getText();
     }
 
-    public String getProductPriceForOnePiece(String productName) {
+    public String getProductPriceForOneItem(String productName) {
         String productPrice = getProductPrice(productName).replace("$", "");
         float price = Float.parseFloat(productPrice);
         int quantity = Integer.parseInt(getProductQuantity(productName));
-        float priceForOnePiece = price / quantity;
-        String productPriceForOnePiece = Float.toString(priceForOnePiece);
-        return "$" + productPriceForOnePiece + "0";
+        float priceForOneItem = price / quantity;
+        String productPriceForOneItem = Float.toString(priceForOneItem);
+        return "$" + productPriceForOneItem + "0";
     }
 }

@@ -35,7 +35,7 @@ public class HomeSteps {
                 .selectProductSize(size)
                 .choseProductColor(color)
                 .clickAddToCartButton()
-                .clickCloseModalCross();
+                .clickCloseModalCrossButton();
         return this;
     }
 

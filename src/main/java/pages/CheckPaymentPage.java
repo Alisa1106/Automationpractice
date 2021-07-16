@@ -15,7 +15,7 @@ public class CheckPaymentPage extends HeaderPage {
     WebElement centerColumn;
 
     public CheckPaymentPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

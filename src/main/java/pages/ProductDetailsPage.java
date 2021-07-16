@@ -27,7 +27,7 @@ public class ProductDetailsPage extends HeaderPage {
     WebElement centerColumn;
 
     public ProductDetailsPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

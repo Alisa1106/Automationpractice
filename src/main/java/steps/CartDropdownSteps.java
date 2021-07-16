@@ -2,7 +2,6 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 import pages.CartDropdown;
-import pages.HeaderPage;
 import pages.HomePage;
 
 public class CartDropdownSteps {
@@ -17,14 +16,14 @@ public class CartDropdownSteps {
 
     public CartDropdownSteps moveToCartHeader() {
         homePage
-                .moveToCartDropdownHeader();
+                .moveToCartDropdown();
         return this;
     }
 
     public String getProductPriceForOnePiece(String productName) {
         return cartDropdown
                 .waitForPageOpened()
-                .getProductPriceForOnePiece(productName);
+                .getProductPriceForOneItem(productName);
     }
 
     public String getProductColorAndSize(String productName) {

@@ -17,7 +17,7 @@ public class BankWirePaymentPage extends HeaderPage {
     WebElement centerColumn;
 
     public BankWirePaymentPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

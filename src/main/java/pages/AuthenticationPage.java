@@ -34,7 +34,7 @@ public class AuthenticationPage extends HeaderPage {
     }
 
     public MyAccountPage signIn(String email, String password) {
-        waitForElementLocated(signInEmailInput, 20);
+        waitForElementLocated(signInEmailInput, LONG_TIMEOUT);
         signInEmailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         signInButton.click();
@@ -42,12 +42,12 @@ public class AuthenticationPage extends HeaderPage {
     }
 
     public String getErrorMessageText() {
-        waitForElementLocated(errorMessageContainer, 10);
+        waitForElementLocated(errorMessageContainer, SHORT_TIMEOUT);
         return errorMessageContainer.getText();
     }
 
     public CreateAccountPage clickCreateAccountButton(String email) {
-        waitForElementLocated(createAccountEmailInput, 20);
+        waitForElementLocated(createAccountEmailInput, LONG_TIMEOUT);
         createAccountEmailInput.sendKeys(email);
         createAccountButton.click();
         return new CreateAccountPage(driver);

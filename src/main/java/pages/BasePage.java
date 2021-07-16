@@ -1,5 +1,6 @@
 package pages;
 
+import constants.ITimeoutConstants;
 import constants.IUrlConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage implements IUrlConstants {
+public class BasePage implements IUrlConstants, ITimeoutConstants {
 
     WebDriver driver;
     WebDriverWait wait;

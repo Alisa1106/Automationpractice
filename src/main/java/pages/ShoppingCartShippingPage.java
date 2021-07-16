@@ -16,7 +16,7 @@ public class ShoppingCartShippingPage extends BasePage {
     WebElement pageForm;
 
     public ShoppingCartShippingPage waitForPageOpened() {
-        waitForElementLocated(pageForm, 10);
+        waitForElementLocated(pageForm, SHORT_TIMEOUT);
         return this;
     }
 

@@ -15,7 +15,7 @@ public class ShoppingCartSummaryPage extends HeaderPage {
     WebElement centerColumn;
 
     public ShoppingCartSummaryPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

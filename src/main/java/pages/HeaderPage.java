@@ -23,17 +23,17 @@ public class HeaderPage extends BasePage {
     WebElement searchButton;
 
     public String getCustomerNameText() {
-        waitForElementLocated(myCustomerAccountNameField, 10);
+        waitForElementLocated(myCustomerAccountNameField, SHORT_TIMEOUT);
         return myCustomerAccountNameField.getText();
     }
 
-    public CartDropdown moveToCartDropdownHeader() {
+    public CartDropdown moveToCartDropdown() {
         WebDriverUtils.moveToElement(driver, CART_DROPDOWN_HEADER_XPATH);
         return new CartDropdown(driver);
     }
 
     public FoundPage searchProduct(String productName) {
-        waitForElementLocated(searchInputField, 10);
+        waitForElementLocated(searchInputField, SHORT_TIMEOUT);
         searchInputField.sendKeys(productName);
         searchButton.click();
         return new FoundPage(driver);
