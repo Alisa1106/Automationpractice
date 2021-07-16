@@ -21,6 +21,8 @@ public class BaseTest {
     OrderConfirmationSteps orderConfirmationSteps;
     MyAddressesSteps myAddressesSteps;
     OrderHistorySteps orderHistorySteps;
+    CartDropdownSteps cartDropdownSteps;
+    SearchSteps searchSteps;
 
     @BeforeMethod
     public void initTest() {
@@ -48,5 +50,7 @@ public class BaseTest {
         orderConfirmationSteps = new OrderConfirmationSteps(driver);
         myAddressesSteps = new MyAddressesSteps(driver);
         orderHistorySteps = new OrderHistorySteps(driver);
+        cartDropdownSteps = new CartDropdownSteps(driver);
+        searchSteps = new SearchSteps(driver);
     }
 }

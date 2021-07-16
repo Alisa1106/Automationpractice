@@ -18,7 +18,7 @@ public class YourAddressesPage extends HeaderPage {
     WebElement addressTable;
 
     public YourAddressesPage waitForPageOpened() {
-        waitForElementLocated(addressTable, 10);
+        waitForElementLocated(addressTable, SHORT_TIMEOUT);
         return this;
     }
 

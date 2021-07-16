@@ -21,7 +21,7 @@ public class ShoppingCartAddressPage extends HeaderPage {
     WebElement deliveryAddressSelect;
 
     public ShoppingCartAddressPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

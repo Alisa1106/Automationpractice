@@ -22,7 +22,7 @@ public class OrderHistoryPage extends HeaderPage {
     }
 
     public OrderHistoryPage waitForPageOpened() {
-        waitForElementLocated(ordersTable, 10);
+        waitForElementLocated(ordersTable, SHORT_TIMEOUT);
         return this;
     }
 

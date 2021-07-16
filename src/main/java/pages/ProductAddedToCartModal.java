@@ -16,9 +16,18 @@ public class ProductAddedToCartModal extends BasePage {
     @FindBy(className = "button-container")
     WebElement buttonContainer;
 
+    @FindBy(xpath = "//*[@class='cross']")
+    WebElement closeModalCrossButton;
+
     public ShoppingCartSummaryPage clickProceedToCheckoutButton() {
-        waitForElementLocated(buttonContainer, 10);
+        waitForElementLocated(buttonContainer, SHORT_TIMEOUT);
         proceedToCheckoutButton.click();
         return new ShoppingCartSummaryPage(driver);
+    }
+
+    public HeaderPage clickCloseModalCrossButton() {
+        waitForElementLocated(closeModalCrossButton, SHORT_TIMEOUT);
+        closeModalCrossButton.click();
+        return new HeaderPage(driver);
     }
 }

@@ -21,7 +21,7 @@ public class HomePage extends HeaderPage {
 
     public HomePage moveToProductItem(String productName) {
         String productItem = String.format(PRODUCT_ITEM_XPATH, productName);
-        waitForElementLocated(By.xpath(productItem), 20);
+        waitForElementLocated(By.xpath(productItem), LONG_TIMEOUT);
         WebDriverUtils.moveToElement(driver, productItem);
         return this;
     }

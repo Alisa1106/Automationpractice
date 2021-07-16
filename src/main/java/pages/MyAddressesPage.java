@@ -26,7 +26,7 @@ public class MyAddressesPage extends HeaderPage {
     }
 
     public MyAddressesPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

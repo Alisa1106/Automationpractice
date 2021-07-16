@@ -8,7 +8,7 @@ import test_data.ITestData;
 
 public class CreateAccountTest extends BaseTest implements ITestData, ITestConstants {
 
-    @Test
+    @Test(description = "Check that account is created")
     public void createAccountTest() {
         Account account = new Account(FIRST_NAME, LAST_NAME, CREATE_ACCOUNT_PASSWORD, ADDRESS, CITY, STATE, ZIP_CODE,
                 COUNTRY, MOBILE_PHONE);

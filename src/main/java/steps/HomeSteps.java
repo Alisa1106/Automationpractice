@@ -25,6 +25,20 @@ public class HomeSteps {
         return this;
     }
 
+    public HomeSteps addProductToCartWithConditionsThenCloseAddedToCartModal(String productName, String productQuantity,
+                                                                             String size, String color) {
+        homePage
+                .openPage()
+                .clickMoreButton(productName)
+                .waitForPageOpened()
+                .chooseProductQuantity(productQuantity)
+                .selectProductSize(size)
+                .choseProductColor(color)
+                .clickAddToCartButton()
+                .clickCloseModalCrossButton();
+        return this;
+    }
+
     public HomeSteps addProductToCart(String productName) {
         homePage
                 .openPage()

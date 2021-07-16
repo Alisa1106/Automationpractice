@@ -24,7 +24,7 @@ public class ShoppingCartPaymentPage extends HeaderPage {
     WebElement totalPrice;
 
     public ShoppingCartPaymentPage waitForPageOpened() {
-        waitForElementLocated(centerColumn, 10);
+        waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 

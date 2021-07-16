@@ -15,7 +15,22 @@
         <testng.version>7.4.0</testng.version>
         <webdrivermanager.version>4.4.3</webdrivermanager.version>
         <lombok.version>1.18.20</lombok.version>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/automationpractice.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
