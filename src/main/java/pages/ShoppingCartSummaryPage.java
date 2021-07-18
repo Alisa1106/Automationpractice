@@ -1,10 +1,13 @@
 package pages;
 
 import elements.Button;
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log4j2
 public class ShoppingCartSummaryPage extends HeaderPage {
 
     public ShoppingCartSummaryPage(WebDriver driver) {
@@ -19,7 +22,9 @@ public class ShoppingCartSummaryPage extends HeaderPage {
         return this;
     }
 
+    @Step("Click button 'Proceed to checkout' at summary page")
     public ShoppingCartAddressPage clickProceedToCheckoutButton() {
+        log.info("Click button 'Proceed to checkout'.");
         new Button(driver, "Proceed to checkout").click();
         return new ShoppingCartAddressPage(driver);
     }

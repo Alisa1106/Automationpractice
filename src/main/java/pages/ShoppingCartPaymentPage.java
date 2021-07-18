@@ -1,11 +1,14 @@
 package pages;
 
 import elements.Button;
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log4j2
 public class ShoppingCartPaymentPage extends HeaderPage {
 
     public ShoppingCartPaymentPage(WebDriver driver) {
@@ -40,12 +43,16 @@ public class ShoppingCartPaymentPage extends HeaderPage {
         return driver.findElement(By.xpath(String.format(PRODUCT_QUANTITY_XPATH, productName))).getText();
     }
 
+    @Step("Click button 'Pay by bank wire'")
     public BankWirePaymentPage clickPayByBankWireButton() {
+        log.info("Click button 'Pay by bank wire'.");
         new Button(driver, "Pay by bank wire").click();
         return new BankWirePaymentPage(driver);
     }
 
+    @Step("Click button 'Pay by check'")
     public CheckPaymentPage clickPayByCheckButton() {
+        log.info("Click button 'Pay by check'.");
         new Button(driver, "Pay by check").click();
         return new CheckPaymentPage(driver);
     }

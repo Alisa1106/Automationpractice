@@ -1,12 +1,18 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import steps.*;
+import utils.TestListener;
 
+@Log4j2
+@Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
     AuthenticationSteps authenticationSteps;
@@ -25,15 +31,19 @@ public class BaseTest {
     SearchSteps searchSteps;
 
     @BeforeMethod
-    public void initTest() {
+    public void initTest(ITestContext context) {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         initSteps();
+        String variable = "driver";
+        log.debug("Setting driver into context with variable name " + variable);
+        context.setAttribute(variable, driver);
     }
 
     @AfterMethod(alwaysRun = true)
     public void endTest() {
+        log.debug("Close browser.");
         driver.quit();
     }
 

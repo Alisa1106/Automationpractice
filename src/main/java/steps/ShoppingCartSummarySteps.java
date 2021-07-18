@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.ShoppingCartSummaryPage;
 
@@ -11,6 +12,7 @@ public class ShoppingCartSummarySteps {
         shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
     }
 
+    @Step("Go to payment")
     public ShoppingCartSummarySteps goToPayment() {
         shoppingCartSummaryPage
                 .waitForPageOpened()
