@@ -45,6 +45,6 @@ public class ShoppingCartAddressPage extends HeaderPage {
 
     public String getSelectedDeliveryAddress() {
         select = new Select(deliveryAddressSelect);
-        return select.getFirstSelectedOption().getText();
+        return select.getFirstSelectedOption().getText().trim();
     }
 }
