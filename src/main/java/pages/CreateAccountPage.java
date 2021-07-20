@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import objects.Account;
 import elements.DropDown;
 import elements.Input;
@@ -7,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log4j2
 public class CreateAccountPage extends HeaderPage {
 
     public CreateAccountPage(WebDriver driver) {
@@ -19,6 +22,7 @@ public class CreateAccountPage extends HeaderPage {
     @FindBy(className = "account_creation")
     WebElement accountCreationTable;
 
+    @Step("Fill in account fields: {account} and click button 'Register'")
     public MyAccountPage createAccount(Account account) {
         waitForElementLocated(accountCreationTable, SHORT_TIMEOUT);
         new Input(driver, "First name").writeText(account.getFirstName());
@@ -30,6 +34,7 @@ public class CreateAccountPage extends HeaderPage {
         new Input(driver, "Zip/Postal Code").writeText(account.getZipCode());
         new DropDown(driver, "Country").select(account.getCountry());
         new Input(driver, "Mobile phone").writeText(account.getMobilePhone());
+        log.info("Click button 'Register'.");
         registerButton.click();
         return new MyAccountPage(driver);
     }

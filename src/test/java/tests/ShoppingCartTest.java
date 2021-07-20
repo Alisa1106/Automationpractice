@@ -36,6 +36,6 @@ public class ShoppingCartTest extends BaseTest implements ITestConstants {
                 .moveToCartHeader();
         Assert.assertEquals(cartDropdownSteps.getProductColorAndSize(product.getName()), product.getColor() + ", " + product.getSize());
         Assert.assertEquals(cartDropdownSteps.getProductQuantity(product.getName()), product.getQuantity());
-        Assert.assertEquals(cartDropdownSteps.getProductPriceForOnePiece(product.getName()), product.getPrice());
+        Assert.assertEquals(cartDropdownSteps.getProductPriceForOneItem(product.getName()), product.getPrice());
     }
 }

@@ -1,11 +1,14 @@
 package pages;
 
 import elements.Button;
+import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log4j2
 public class MyAddressesPage extends HeaderPage {
 
     public MyAddressesPage(WebDriver driver) {
@@ -20,6 +23,7 @@ public class MyAddressesPage extends HeaderPage {
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;
 
+    @Step("Open my address page")
     public MyAddressesPage openPage() {
         super.openPage(AUTOMATIONPRACTICE_MY_ADDRESSES_PAGE_URL);
         return this;
@@ -30,7 +34,9 @@ public class MyAddressesPage extends HeaderPage {
         return this;
     }
 
+    @Step("Click button 'Update address' for address: {addressAlias}")
     public YourAddressesPage clickUpdateAddressButton(String addressAlias) {
+        log.info(String.format("Click button 'Update address' for address: '%s'.", addressAlias));
         driver.findElement(By.xpath(String.format(UPDATE_ADDRESS_BUTTON, addressAlias))).click();
         return new YourAddressesPage(driver);
     }
@@ -43,6 +49,7 @@ public class MyAddressesPage extends HeaderPage {
         return driver.findElement(By.xpath(String.format(MOBILE_PHONE_LINE, addressAlias))).getText();
     }
 
+    @Step("Click button 'Add a new address'")
     public YourAddressesPage clickAddNewAddressButton() {
         new Button(driver, "Add a new address").click();
         return new YourAddressesPage(driver);

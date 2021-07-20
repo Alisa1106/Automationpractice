@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import objects.Account;
 import org.openqa.selenium.WebDriver;
 import pages.AuthenticationPage;
@@ -15,10 +16,12 @@ public class CreateAccountSteps {
         authenticationPage = new AuthenticationPage(driver);
     }
 
+    @Step("Create account")
     public CreateAccountSteps createAccount(String email, Account account) {
         authenticationPage
                 .openPage()
-                .clickCreateAccountButton(email);
+                .fillCreateAccountEmailField(email)
+                .clickCreateAccountButton();
         createAccountPage
                 .createAccount(account);
         return this;

@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.CheckPaymentPage;
 
@@ -11,6 +12,7 @@ public class CheckPaymentSteps {
         checkPaymentPage = new CheckPaymentPage(driver);
     }
 
+    @Step("Confirm order")
     public CheckPaymentSteps confirmOrder() {
         checkPaymentPage
                 .waitForPageOpened()

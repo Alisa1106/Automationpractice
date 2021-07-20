@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.ShoppingCartAddressPage;
 import pages.ShoppingCartSummaryPage;
@@ -14,6 +15,7 @@ public class ShoppingCartAddressSteps {
         shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
     }
 
+    @Step("Go to shopping cart address page and select address with address alias: {addressAlias} as a delivery address")
     public ShoppingCartAddressSteps goToShoppingCartAddressPageAndSelectDeliveryAddress(String addressAlias) {
         shoppingCartSummaryPage
                 .waitForPageOpened()
@@ -22,6 +24,7 @@ public class ShoppingCartAddressSteps {
         return this;
     }
 
+    @Step("Get selected delivery address")
     public String getSelectedDeliveryAddress() {
         return shoppingCartAddressPage
                 .getSelectedDeliveryAddress();

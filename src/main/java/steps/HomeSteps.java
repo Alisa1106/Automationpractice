@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 
@@ -11,6 +12,7 @@ public class HomeSteps {
         homePage = new HomePage(driver);
     }
 
+    @Step("Choose product parameter, add product to cart and proceed to checkout")
     public HomeSteps addProductToCartWithConditionsThenGoToCart(String productName, String productQuantity,
                                                                 String size, String color) {
         homePage
@@ -25,6 +27,7 @@ public class HomeSteps {
         return this;
     }
 
+    @Step("Choose product parameter, add product to cart and close added to cart modal")
     public HomeSteps addProductToCartWithConditionsThenCloseAddedToCartModal(String productName, String productQuantity,
                                                                              String size, String color) {
         homePage
@@ -39,6 +42,7 @@ public class HomeSteps {
         return this;
     }
 
+    @Step("Add product to cart and proceed to checkout")
     public HomeSteps addProductToCart(String productName) {
         homePage
                 .openPage()
