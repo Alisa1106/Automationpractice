@@ -24,7 +24,6 @@ public class CheckPaymentPage extends HeaderPage {
 
     @Step("Click button 'I confirm my order'")
     public OrderConfirmationByCheckPage clickConfirmOrderButton() {
-        log.info("Click button 'I confirm my order'.");
         new Button(driver, "I confirm my order").click();
         return new OrderConfirmationByCheckPage(driver);
     }

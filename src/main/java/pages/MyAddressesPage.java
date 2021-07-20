@@ -25,7 +25,6 @@ public class MyAddressesPage extends HeaderPage {
 
     @Step("Open my address page")
     public MyAddressesPage openPage() {
-        log.info("Open my address page URL " + AUTOMATIONPRACTICE_MY_ADDRESSES_PAGE_URL);
         super.openPage(AUTOMATIONPRACTICE_MY_ADDRESSES_PAGE_URL);
         return this;
     }
@@ -52,7 +51,6 @@ public class MyAddressesPage extends HeaderPage {
 
     @Step("Click button 'Add a new address'")
     public YourAddressesPage clickAddNewAddressButton() {
-        log.info("Click button 'Add a new address'");
         new Button(driver, "Add a new address").click();
         return new YourAddressesPage(driver);
     }

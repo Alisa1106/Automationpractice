@@ -45,14 +45,12 @@ public class ShoppingCartPaymentPage extends HeaderPage {
 
     @Step("Click button 'Pay by bank wire'")
     public BankWirePaymentPage clickPayByBankWireButton() {
-        log.info("Click button 'Pay by bank wire'.");
         new Button(driver, "Pay by bank wire").click();
         return new BankWirePaymentPage(driver);
     }
 
     @Step("Click button 'Pay by check'")
     public CheckPaymentPage clickPayByCheckButton() {
-        log.info("Click button 'Pay by check'.");
         new Button(driver, "Pay by check").click();
         return new CheckPaymentPage(driver);
     }

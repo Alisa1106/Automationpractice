@@ -20,7 +20,8 @@ public class CreateAccountSteps {
     public CreateAccountSteps createAccount(String email, Account account) {
         authenticationPage
                 .openPage()
-                .clickCreateAccountButton(email);
+                .fillCreateAccountEmailField(email)
+                .clickCreateAccountButton();
         createAccountPage
                 .createAccount(account);
         return this;

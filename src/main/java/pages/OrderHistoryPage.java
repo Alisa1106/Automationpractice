@@ -21,7 +21,6 @@ public class OrderHistoryPage extends HeaderPage {
 
     @Step("Open order history page")
     public OrderHistoryPage openPage() {
-        log.info("Open order history page URL " + AUTOMATIONPRACTICE_ORDER_HISTORY_PAGE_URL);
         super.openPage(AUTOMATIONPRACTICE_ORDER_HISTORY_PAGE_URL);
         return this;
     }

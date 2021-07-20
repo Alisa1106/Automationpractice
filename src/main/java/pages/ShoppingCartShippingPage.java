@@ -25,14 +25,12 @@ public class ShoppingCartShippingPage extends BasePage {
 
     @Step("Mark agree term of service checkbox")
     public ShoppingCartShippingPage markAgreeTermsOfServiceCheckbox() {
-        log.info("Mark agree term of service checkbox.");
         new Checkbox(driver, "cgv").mark();
         return this;
     }
 
     @Step("Click button 'Proceed to checkout' at shipping page")
     public ShoppingCartPaymentPage clickProceedToCheckoutButton() {
-        log.info("Click button 'Proceed to checkout'.");
         new Button(driver, "Proceed to checkout").click();
         return new ShoppingCartPaymentPage(driver);
     }

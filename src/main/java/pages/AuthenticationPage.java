@@ -33,7 +33,6 @@ public class AuthenticationPage extends HeaderPage {
 
     @Step("Open authentication page")
     public AuthenticationPage openPage() {
-        log.info("Open authentication page URL " + AUTOMATIONPRACTICE_AUTHENTICATION_PAGE_URL);
         super.openPage(AUTOMATIONPRACTICE_AUTHENTICATION_PAGE_URL);
         return this;
     }
@@ -56,11 +55,16 @@ public class AuthenticationPage extends HeaderPage {
         return errorMessageContainer.getText();
     }
 
-    @Step("Fill in {email} in create account email field and click button 'Create an account'")
-    public CreateAccountPage clickCreateAccountButton(String email) {
+    @Step("Fill in {email} in create account email field")
+    public AuthenticationPage fillCreateAccountEmailField(String email) {
         waitForElementLocated(createAccountEmailInput, LONG_TIMEOUT);
         log.info(String.format("Fill in email: '%s' in create account email field.", email));
         createAccountEmailInput.sendKeys(email);
+        return this;
+    }
+
+    @Step("Click button 'Create an account'")
+    public CreateAccountPage clickCreateAccountButton() {
         log.info("Click button 'Create an account'.");
         createAccountButton.click();
         return new CreateAccountPage(driver);

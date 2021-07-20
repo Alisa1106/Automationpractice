@@ -24,7 +24,6 @@ public class ShoppingCartSummaryPage extends HeaderPage {
 
     @Step("Click button 'Proceed to checkout' at summary page")
     public ShoppingCartAddressPage clickProceedToCheckoutButton() {
-        log.info("Click button 'Proceed to checkout'.");
         new Button(driver, "Proceed to checkout").click();
         return new ShoppingCartAddressPage(driver);
     }
