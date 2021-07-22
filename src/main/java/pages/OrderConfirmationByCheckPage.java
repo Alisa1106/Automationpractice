@@ -13,6 +13,11 @@ public class OrderConfirmationByCheckPage extends HeaderPage {
     @FindBy(xpath = "//*[contains(@class,'box')]")
     WebElement orderConfirmation;
 
+    /**
+     * Gets order reference.
+     *
+     * @return the order reference
+     */
     public String getOrderReference() {
         String orderInformationText = this.orderConfirmation.getText();
         String[] orderInformationLines = orderInformationText.split("\n");

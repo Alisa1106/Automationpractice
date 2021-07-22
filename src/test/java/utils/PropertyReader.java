@@ -18,6 +18,11 @@ public final class PropertyReader {
         return propertiesPath;
     }
 
+    /**
+     * Read properties.
+     *
+     * @return the properties
+     */
     public static Properties readProperties() {
         properties = new Properties();
         try {
@@ -44,11 +49,23 @@ public final class PropertyReader {
         return properties != null ? properties : readProperties();
     }
 
+    /**
+     * Gets properties.
+     *
+     * @param path the path
+     * @return the properties
+     */
     public static Properties getProperties(String path) {
         propertiesPath = path;
         return readProperties();
     }
 
+    /**
+     * Gets property.
+     *
+     * @param propertyName the property name
+     * @return the property
+     */
     public static String getProperty(String propertyName) {
         return loadProperties().getProperty(propertyName);
     }

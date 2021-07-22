@@ -7,6 +7,11 @@ import java.util.Random;
 
 public interface ITestData {
 
+    /**
+     * Input for registration.
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider(name = "Invalid sign in credentials")
     static Object[][] inputForRegistration() {
         return new Object[][]{
@@ -16,6 +21,11 @@ public interface ITestData {
         };
     }
 
+    /**
+     * Input for update address.
+     *
+     * @return the object [ ] [ ]
+     */
     @DataProvider(name = "Update address")
     static Object[][] inputForUpdateAddress() {
         return new Object[][]{
@@ -25,6 +35,11 @@ public interface ITestData {
         };
     }
 
+    /**
+     * Gets random char.
+     *
+     * @return the random char
+     */
     default String getRandomChar() {
         Random random = new Random();
         char nextChar;

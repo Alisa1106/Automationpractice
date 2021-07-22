@@ -16,6 +16,13 @@ public class CreateAccountSteps {
         authenticationPage = new AuthenticationPage(driver);
     }
 
+    /**
+     * Create account.
+     *
+     * @param email   the email
+     * @param account the account
+     * @return the create account steps
+     */
     @Step("Create account")
     public CreateAccountSteps createAccount(String email, Account account) {
         authenticationPage

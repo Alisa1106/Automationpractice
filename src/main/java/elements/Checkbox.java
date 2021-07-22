@@ -14,6 +14,9 @@ public class Checkbox {
         this.label = label;
     }
 
+    /**
+     * Mark checkbox.
+     */
     public void mark() {
         driver.findElement(By.xpath(String.format(CHECKBOX_XPATH, label))).click();
     }

@@ -17,4 +17,6 @@ public interface ITestConstants {
     String LAST_NAME = "Smith";
     String CREATE_ACCOUNT_PASSWORD = "123456";
     String EMAIL_DOMAIN_NAME = "@mailinator.com";
+    String EMAIL_PROPERTY = "email";
+    String PASSWORD_PROPERTY = "password";
 }

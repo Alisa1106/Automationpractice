@@ -31,12 +31,24 @@ public class AuthenticationPage extends HeaderPage {
     @FindBy(id = "SubmitCreate")
     WebElement createAccountButton;
 
+    /**
+     * Open authentication page.
+     *
+     * @return the authentication page
+     */
     @Step("Open authentication page")
     public AuthenticationPage openPage() {
         super.openPage(AUTOMATIONPRACTICE_AUTHENTICATION_PAGE_URL);
         return this;
     }
 
+    /**
+     * Sign in.
+     *
+     * @param email    the email
+     * @param password the password
+     * @return the my account page
+     */
     @Step("Fill in {email} and {password} in sign in fields and click button 'Sign in'")
     public MyAccountPage signIn(String email, String password) {
         waitForElementLocated(signInEmailInput, LONG_TIMEOUT);
@@ -49,12 +61,23 @@ public class AuthenticationPage extends HeaderPage {
         return new MyAccountPage(driver);
     }
 
+    /**
+     * Gets error message text.
+     *
+     * @return the error message text
+     */
     @Step("Get error message text")
     public String getErrorMessageText() {
         waitForElementLocated(errorMessageContainer, SHORT_TIMEOUT);
         return errorMessageContainer.getText();
     }
 
+    /**
+     * Fill create account email field.
+     *
+     * @param email the email
+     * @return the authentication page
+     */
     @Step("Fill in {email} in create account email field")
     public AuthenticationPage fillCreateAccountEmailField(String email) {
         waitForElementLocated(createAccountEmailInput, LONG_TIMEOUT);
@@ -63,6 +86,11 @@ public class AuthenticationPage extends HeaderPage {
         return this;
     }
 
+    /**
+     * Click create account button.
+     *
+     * @return the create account page
+     */
     @Step("Click button 'Create an account'")
     public CreateAccountPage clickCreateAccountButton() {
         log.info("Click button 'Create an account'.");

@@ -19,23 +19,52 @@ public class CartDropdown extends HeaderPage {
     @FindBy(className = "cart_block_list")
     WebElement cartDropdownContent;
 
+    /**
+     * Wait for cart dropdown page opened.
+     *
+     * @return the cart dropdown
+     */
     public CartDropdown waitForPageOpened() {
         waitForElementLocated(cartDropdownContent, SHORT_TIMEOUT);
         return this;
     }
 
+    /**
+     * Gets product color and size.
+     *
+     * @param productName the product name
+     * @return the product color and size
+     */
     public String getProductColorAndSize(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_COLOR_AND_SIZE_XPATH, productName))).getText();
     }
 
+    /**
+     * Gets product quantity.
+     *
+     * @param productName the product name
+     * @return the product quantity
+     */
     public String getProductQuantity(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_QUANTITY_XPATH, productName))).getText();
     }
 
+    /**
+     * Gets product price.
+     *
+     * @param productName the product name
+     * @return the product price
+     */
     public String getProductPrice(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_PRICE_XPATH, productName))).getText();
     }
 
+    /**
+     * Gets product price for one item.
+     *
+     * @param productName the product name
+     * @return the product price for one item
+     */
     public String getProductPriceForOneItem(String productName) {
         String productPrice = getProductPrice(productName).replace("$", "");
         float price = Float.parseFloat(productPrice);

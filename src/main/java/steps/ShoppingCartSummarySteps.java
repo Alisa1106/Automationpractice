@@ -12,6 +12,11 @@ public class ShoppingCartSummarySteps {
         shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
     }
 
+    /**
+     * Go to payment.
+     *
+     * @return the shopping cart summary steps
+     */
     @Step("Go to payment")
     public ShoppingCartSummarySteps goToPayment() {
         shoppingCartSummaryPage

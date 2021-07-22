@@ -15,6 +15,11 @@ public class CartDropdownSteps {
         homePage = new HomePage(driver);
     }
 
+    /**
+     * Move to cart header.
+     *
+     * @return the cart dropdown steps
+     */
     @Step("Move to 'Cart dropdown'")
     public CartDropdownSteps moveToCartHeader() {
         homePage
@@ -22,6 +27,12 @@ public class CartDropdownSteps {
         return this;
     }
 
+    /**
+     * Gets product price for one item.
+     *
+     * @param productName the product name
+     * @return the product price for one item
+     */
     @Step("Get product price for one item product: {productName}")
     public String getProductPriceForOneItem(String productName) {
         return cartDropdown
@@ -29,6 +40,12 @@ public class CartDropdownSteps {
                 .getProductPriceForOneItem(productName);
     }
 
+    /**
+     * Gets product color and size.
+     *
+     * @param productName the product name
+     * @return the product color and size
+     */
     @Step("Get product color and size for product: {productName}")
     public String getProductColorAndSize(String productName) {
         return cartDropdown
@@ -36,6 +53,12 @@ public class CartDropdownSteps {
                 .getProductColorAndSize(productName);
     }
 
+    /**
+     * Gets product quantity.
+     *
+     * @param productName the product name
+     * @return the product quantity
+     */
     @Step("Get product quantity for product: {productName}")
     public String getProductQuantity(String productName) {
         return cartDropdown

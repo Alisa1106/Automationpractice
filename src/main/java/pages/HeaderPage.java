@@ -25,17 +25,33 @@ public class HeaderPage extends BasePage {
     @FindBy(name = "submit_search")
     WebElement searchButton;
 
+    /**
+     * Gets customer name text.
+     *
+     * @return the customer name text
+     */
     public String getCustomerNameText() {
         waitForElementLocated(myCustomerAccountNameField, SHORT_TIMEOUT);
         return myCustomerAccountNameField.getText();
     }
 
+    /**
+     * Move to cart dropdown.
+     *
+     * @return the cart dropdown
+     */
     public CartDropdown moveToCartDropdown() {
         log.info("Move to cart dropdown");
         WebDriverUtils.moveToElement(driver, CART_DROPDOWN_XPATH);
         return new CartDropdown(driver);
     }
 
+    /**
+     * Search product.
+     *
+     * @param productName the product name
+     * @return the found page
+     */
     @Step("Fill in {productName} in search input field and click search button")
     public FoundPage searchProduct(String productName) {
         waitForElementLocated(searchInputField, SHORT_TIMEOUT);

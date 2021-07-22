@@ -12,6 +12,11 @@ public class MyAccountSteps {
         myAccountPage = new MyAccountPage(driver);
     }
 
+    /**
+     * Gets my account name.
+     *
+     * @return the my account name
+     */
     @Step("Get customer name")
     public String getMyAccountName() {
         return myAccountPage.getCustomerNameText();

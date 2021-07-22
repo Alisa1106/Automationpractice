@@ -1,6 +1,5 @@
 package pages;
 
-import elements.Button;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
@@ -23,17 +22,33 @@ public class ShoppingCartAddressPage extends HeaderPage {
     @FindBy(id = "id_address_delivery")
     WebElement deliveryAddressSelect;
 
+    /**
+     * Wait for shopping cart address page opened.
+     *
+     * @return the shopping cart address page
+     */
     public ShoppingCartAddressPage waitForPageOpened() {
         waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 
+    /**
+     * Click proceed to checkout button.
+     *
+     * @return the shopping cart shipping page
+     */
     @Step("Click button 'Proceed to checkout' at address page")
     public ShoppingCartShippingPage clickProceedToCheckoutButton() {
-        new Button(driver, "Proceed to checkout").click();
+        actions.clickButton(PROCEED_TO_CHECKOUT_BUTTON);
         return new ShoppingCartShippingPage(driver);
     }
 
+    /**
+     * Select delivery address.
+     *
+     * @param addressAlias the address alias
+     * @return the shopping cart address page
+     */
     @Step("Select address: {addressAlias} as delivery address")
     public ShoppingCartAddressPage selectDeliveryAddress(String addressAlias) {
         select = new Select(deliveryAddressSelect);
@@ -42,6 +57,11 @@ public class ShoppingCartAddressPage extends HeaderPage {
         return this;
     }
 
+    /**
+     * Gets selected delivery address.
+     *
+     * @return the selected delivery address
+     */
     public String getSelectedDeliveryAddress() {
         select = new Select(deliveryAddressSelect);
         return select.getFirstSelectedOption().getText().trim();

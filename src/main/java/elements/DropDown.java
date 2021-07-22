@@ -17,6 +17,11 @@ public class DropDown {
         this.label = label;
     }
 
+    /**
+     * Select option.
+     *
+     * @param option the option
+     */
     public void select(String option) {
         log.info(String.format("Select '%s' in '%s' dropdown.", option, label));
         driver.findElement(By.xpath(String.format(DROPDOWN_XPATH, label))).click();

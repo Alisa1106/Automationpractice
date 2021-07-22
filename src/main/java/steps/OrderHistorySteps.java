@@ -12,6 +12,11 @@ public class OrderHistorySteps {
         orderHistoryPage = new OrderHistoryPage(driver);
     }
 
+    /**
+     * Gets last order reference.
+     *
+     * @return the last order reference
+     */
     @Step("Open order history page and get last order reference")
     public String getLastOrderReference() {
         return orderHistoryPage

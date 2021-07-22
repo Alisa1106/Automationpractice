@@ -5,10 +5,14 @@ import objects.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test_data.ITestData;
+import utils.Retry;
 
 public class CreateAccountTest extends BaseTest implements ITestData, ITestConstants {
 
-    @Test(description = "Check that account is created")
+    /**
+     * Check that account is created.
+     */
+    @Test(description = "Check that account is created", retryAnalyzer = Retry.class)
     public void createAccountTest() {
         Account account = new Account(FIRST_NAME, LAST_NAME, CREATE_ACCOUNT_PASSWORD, ADDRESS, CITY, STATE, ZIP_CODE,
                 COUNTRY, MOBILE_PHONE);
