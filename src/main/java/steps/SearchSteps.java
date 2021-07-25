@@ -12,6 +12,12 @@ public class SearchSteps {
         homePage = new HomePage(driver);
     }
 
+    /**
+     * Is searching product found.
+     *
+     * @param productName the product name
+     * @return the boolean
+     */
     @Step("Get search result list and check that it isn`t empty")
     public boolean isSearchingProductFound(String productName) {
         return homePage

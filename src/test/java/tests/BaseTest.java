@@ -2,6 +2,7 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestContext;
@@ -30,10 +31,21 @@ public class BaseTest {
     CartDropdownSteps cartDropdownSteps;
     SearchSteps searchSteps;
 
+    /**
+     * Init test.
+     * This method performed before the test method.
+     *
+     * @param context the context
+     */
     @BeforeMethod
     public void initTest(ITestContext context) {
+
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        try {
+            driver = new ChromeDriver();
+        } catch (SessionNotCreatedException e) {
+            log.fatal("ERROR: Chromedriver isn't started. " + e.getMessage());
+        }
         driver.manage().window().maximize();
         initSteps();
         String variable = "driver";
@@ -41,12 +53,19 @@ public class BaseTest {
         context.setAttribute(variable, driver);
     }
 
+    /**
+     * End test.
+     * This method performed after test method regardless of the test result.
+     */
     @AfterMethod(alwaysRun = true)
     public void endTest() {
         log.debug("Close browser.");
         driver.quit();
     }
 
+    /**
+     * Init steps.
+     */
     public void initSteps() {
         authenticationSteps = new AuthenticationSteps(driver);
         myAccountSteps = new MyAccountSteps(driver);

@@ -16,11 +16,19 @@ public class Input {
         this.label = label;
     }
 
+    /**
+     * Write text.
+     *
+     * @param text the text
+     */
     public void writeText(String text) {
         log.info(String.format("Fill '%s' in '%s' field.", text, label));
         driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).sendKeys(text);
     }
 
+    /**
+     * Clear.
+     */
     public void clear() {
         log.info(String.format("Clear '%s' field.", label));
         driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).clear();

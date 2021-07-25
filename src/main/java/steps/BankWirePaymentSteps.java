@@ -12,6 +12,11 @@ public class BankWirePaymentSteps {
         bankWirePaymentPage = new BankWirePaymentPage(driver);
     }
 
+    /**
+     * Gets total amount of order.
+     *
+     * @return the total amount of order
+     */
     @Step("Open bank wire payment Page and get total amount of order")
     public String getTotalAmountOfOrder() {
         return bankWirePaymentPage

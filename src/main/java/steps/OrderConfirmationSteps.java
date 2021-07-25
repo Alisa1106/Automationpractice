@@ -12,6 +12,11 @@ public class OrderConfirmationSteps {
         orderConfirmationByCheckPage = new OrderConfirmationByCheckPage(driver);
     }
 
+    /**
+     * Gets order reference.
+     *
+     * @return the order reference
+     */
     @Step("Get order reference")
     public String getOrderReference() {
         return orderConfirmationByCheckPage

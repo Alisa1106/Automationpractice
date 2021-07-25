@@ -29,11 +29,22 @@ public class ProductDetailsPage extends HeaderPage {
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;
 
+    /**
+     * Wait for product details page opened.
+     *
+     * @return the product details page
+     */
     public ProductDetailsPage waitForPageOpened() {
         waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 
+    /**
+     * Choose product quantity.
+     *
+     * @param quantity the quantity
+     * @return the product details page
+     */
     @Step("Clear choose product quantity field and fill in quantity: {quantity}")
     public ProductDetailsPage chooseProductQuantity(String quantity) {
         log.info("Clear product quantity field.");
@@ -43,6 +54,12 @@ public class ProductDetailsPage extends HeaderPage {
         return this;
     }
 
+    /**
+     * Select product size.
+     *
+     * @param size the size
+     * @return the product details page
+     */
     @Step("Select product size: {size}")
     public ProductDetailsPage selectProductSize(String size) {
         Select select = new Select(selectProductSize);
@@ -51,6 +68,12 @@ public class ProductDetailsPage extends HeaderPage {
         return this;
     }
 
+    /**
+     * Chose product color.
+     *
+     * @param color the color
+     * @return the product details page
+     */
     @Step("Choose product color: {color}")
     public ProductDetailsPage choseProductColor(String color) {
         log.info(String.format("Choose product color: '%s'.", color));
@@ -58,6 +81,11 @@ public class ProductDetailsPage extends HeaderPage {
         return this;
     }
 
+    /**
+     * Click add to cart button.
+     *
+     * @return the product added to cart modal
+     */
     @Step("Click button 'Add to cart'")
     public ProductAddedToCartModal clickAddToCartButton() {
         log.info("Click button 'Add to cart'.");

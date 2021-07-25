@@ -22,6 +22,11 @@ public class ProductAddedToCartModal extends BasePage {
     @FindBy(xpath = "//*[@class='cross']")
     WebElement closeModalCrossButton;
 
+    /**
+     * Click proceed to checkout button.
+     *
+     * @return the shopping cart summary page
+     */
     @Step("Click button 'Proceed to checkout'")
     public ShoppingCartSummaryPage clickProceedToCheckoutButton() {
         waitForElementLocated(buttonContainer, SHORT_TIMEOUT);
@@ -30,6 +35,11 @@ public class ProductAddedToCartModal extends BasePage {
         return new ShoppingCartSummaryPage(driver);
     }
 
+    /**
+     * Click close modal cross button.
+     *
+     * @return the header page
+     */
     @Step("Click close modal cross button")
     public HeaderPage clickCloseModalCrossButton() {
         waitForElementLocated(closeModalCrossButton, SHORT_TIMEOUT);

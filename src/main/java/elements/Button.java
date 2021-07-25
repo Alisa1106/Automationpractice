@@ -17,6 +17,9 @@ public class Button {
         this.label = label;
     }
 
+    /**
+     * Click button.
+     */
     public void click() {
         log.info(String.format("Click button '%s'.", label));
         driver.findElement(By.xpath(String.format(BUTTON_XPATH, label))).click();

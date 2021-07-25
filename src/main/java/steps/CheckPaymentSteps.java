@@ -12,6 +12,11 @@ public class CheckPaymentSteps {
         checkPaymentPage = new CheckPaymentPage(driver);
     }
 
+    /**
+     * Confirm order.
+     *
+     * @return the check payment steps
+     */
     @Step("Confirm order")
     public CheckPaymentSteps confirmOrder() {
         checkPaymentPage

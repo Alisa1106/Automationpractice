@@ -13,6 +13,13 @@ public class MyAddressesSteps {
         myAddressesPage = new MyAddressesPage(driver);
     }
 
+    /**
+     * Update address.
+     *
+     * @param addressAlias the address alias
+     * @param address      the address
+     * @return the my addresses steps
+     */
     @Step("Update address with address alias: {addressAlias}")
     public MyAddressesSteps updateAddress(String addressAlias, Address address) {
         myAddressesPage
@@ -21,11 +28,17 @@ public class MyAddressesSteps {
                 .clickUpdateAddressButton(addressAlias)
                 .waitForPageOpened()
                 .clearAddressInputFields()
-                .fillAddressField(address)
+                .fillAddressFields(address)
                 .clickSaveAddressButton();
         return this;
     }
 
+    /**
+     * Create new address.
+     *
+     * @param address the address
+     * @return the my addresses steps
+     */
     @Step("Create new address")
     public MyAddressesSteps createNewAddress(Address address) {
         myAddressesPage
@@ -34,17 +47,29 @@ public class MyAddressesSteps {
                 .clickAddNewAddressButton()
                 .waitForPageOpened()
                 .clearAddressAliasField()
-                .fillAddressField(address)
+                .fillAddressFields(address)
                 .clickSaveAddressButton();
         return this;
     }
 
+    /**
+     * Gets address.
+     *
+     * @param addressAlias the address alias
+     * @return the address
+     */
     @Step("Get address from address: {addressAlias}")
     public String getAddress(String addressAlias) {
         return myAddressesPage
                 .getAddressLineText(addressAlias);
     }
 
+    /**
+     * Gets mobile phone.
+     *
+     * @param addressAlias the address alias
+     * @return the mobile phone
+     */
     @Step("Get mobile phone from address: {addressAlias}")
     public String getMobilePhone(String addressAlias) {
         return myAddressesPage

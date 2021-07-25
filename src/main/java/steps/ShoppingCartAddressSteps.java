@@ -15,6 +15,12 @@ public class ShoppingCartAddressSteps {
         shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
     }
 
+    /**
+     * Go to shopping cart address page and select delivery address.
+     *
+     * @param addressAlias the address alias
+     * @return the shopping cart address steps
+     */
     @Step("Go to shopping cart address page and select address with address alias: {addressAlias} as a delivery address")
     public ShoppingCartAddressSteps goToShoppingCartAddressPageAndSelectDeliveryAddress(String addressAlias) {
         shoppingCartSummaryPage
@@ -24,6 +30,11 @@ public class ShoppingCartAddressSteps {
         return this;
     }
 
+    /**
+     * Gets selected delivery address.
+     *
+     * @return the selected delivery address
+     */
     @Step("Get selected delivery address")
     public String getSelectedDeliveryAddress() {
         return shoppingCartAddressPage

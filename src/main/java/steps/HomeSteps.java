@@ -12,6 +12,15 @@ public class HomeSteps {
         homePage = new HomePage(driver);
     }
 
+    /**
+     * Add product to cart with conditions then go to cart.
+     *
+     * @param productName     the product name
+     * @param productQuantity the product quantity
+     * @param size            the size
+     * @param color           the color
+     * @return the home steps
+     */
     @Step("Choose product parameter, add product to cart and proceed to checkout")
     public HomeSteps addProductToCartWithConditionsThenGoToCart(String productName, String productQuantity,
                                                                 String size, String color) {
@@ -27,6 +36,15 @@ public class HomeSteps {
         return this;
     }
 
+    /**
+     * Add product to cart with conditions then close added to cart modal.
+     *
+     * @param productName     the product name
+     * @param productQuantity the product quantity
+     * @param size            the size
+     * @param color           the color
+     * @return the home steps
+     */
     @Step("Choose product parameter, add product to cart and close added to cart modal")
     public HomeSteps addProductToCartWithConditionsThenCloseAddedToCartModal(String productName, String productQuantity,
                                                                              String size, String color) {
@@ -42,6 +60,12 @@ public class HomeSteps {
         return this;
     }
 
+    /**
+     * Add product to cart.
+     *
+     * @param productName the product name
+     * @return the home steps
+     */
     @Step("Add product to cart and proceed to checkout")
     public HomeSteps addProductToCart(String productName) {
         homePage

@@ -1,6 +1,5 @@
 package pages;
 
-import elements.Button;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
@@ -26,35 +25,73 @@ public class ShoppingCartPaymentPage extends HeaderPage {
     @FindBy(id = "total_price")
     WebElement totalPrice;
 
+    /**
+     * Wait for shopping cart payment page opened.
+     *
+     * @return the shopping cart payment page
+     */
     public ShoppingCartPaymentPage waitForPageOpened() {
         waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 
+    /**
+     * Gets product color and size.
+     *
+     * @param productName the product name
+     * @return the product color and size
+     */
     public String getProductColorAndSize(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_COLOR_AND_SIZE_XPATH, productName))).getText();
     }
 
+    /**
+     * Gets unit product price.
+     *
+     * @param productName the product name
+     * @return the unit product price
+     */
     public String getUnitProductPrice(String productName) {
         return driver.findElement(By.xpath(String.format(UNIT_PRODUCT_PRICE_XPATH, productName))).getText();
     }
 
+    /**
+     * Gets product quantity.
+     *
+     * @param productName the product name
+     * @return the product quantity
+     */
     public String getProductQuantity(String productName) {
         return driver.findElement(By.xpath(String.format(PRODUCT_QUANTITY_XPATH, productName))).getText();
     }
 
+    /**
+     * Click pay by bank wire button.
+     *
+     * @return the bank wire payment page
+     */
     @Step("Click button 'Pay by bank wire'")
     public BankWirePaymentPage clickPayByBankWireButton() {
-        new Button(driver, "Pay by bank wire").click();
+        actions.clickButton(PAY_BY_BANK_WIRE_BUTTON);
         return new BankWirePaymentPage(driver);
     }
 
+    /**
+     * Click pay by check button.
+     *
+     * @return the check payment page
+     */
     @Step("Click button 'Pay by check'")
     public CheckPaymentPage clickPayByCheckButton() {
-        new Button(driver, "Pay by check").click();
+        actions.clickButton(PAY_BY_CHECK_BUTTON);
         return new CheckPaymentPage(driver);
     }
 
+    /**
+     * Gets total price.
+     *
+     * @return the total price
+     */
     public String getTotalPrice() {
         return totalPrice.getText();
     }

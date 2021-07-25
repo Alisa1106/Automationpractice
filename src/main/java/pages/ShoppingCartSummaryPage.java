@@ -1,6 +1,5 @@
 package pages;
 
-import elements.Button;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
@@ -17,14 +16,24 @@ public class ShoppingCartSummaryPage extends HeaderPage {
     @FindBy(xpath = "//*[@id='center_column']")
     WebElement centerColumn;
 
+    /**
+     * Wait for shopping cart summary page opened.
+     *
+     * @return the shopping cart summary page
+     */
     public ShoppingCartSummaryPage waitForPageOpened() {
         waitForElementLocated(centerColumn, SHORT_TIMEOUT);
         return this;
     }
 
+    /**
+     * Click proceed to checkout button.
+     *
+     * @return the shopping cart address page
+     */
     @Step("Click button 'Proceed to checkout' at summary page")
     public ShoppingCartAddressPage clickProceedToCheckoutButton() {
-        new Button(driver, "Proceed to checkout").click();
+        actions.clickButton(PROCEED_TO_CHECKOUT_BUTTON);
         return new ShoppingCartAddressPage(driver);
     }
 }
